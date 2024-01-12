@@ -4,7 +4,7 @@
         <link rel="stylesheet" type="text/css" href="css/main.css">
         <title>Cartoon Web!</title>
         <?php
-        require 'menu.html';
+        require 'html/menu.html';
         ?>
     </head>
     <body>
