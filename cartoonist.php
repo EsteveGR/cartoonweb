@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title> </title>
-</head>
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <title>Cartoon Web!</title>
+        <?php
+        require 'menu.html';
+        ?>
+    </head>
 
 <?php
-require 'config.php';
+require 'connexio.php';
 ?>
 
 <body>
