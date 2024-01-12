@@ -11,7 +11,6 @@
       
     <div> 
     <?php
-        echo "<h1> Connexió BDD </h1> ";
         require 'connexio.php';
     ?>
 

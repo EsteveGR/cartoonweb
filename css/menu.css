@@ -1,25 +1,37 @@
-.menu{
-    list-style: none;
-    padding: 0;
+
+.logo{
+    height: 40px;
+    position: absolute;
+    padding: 10px 20px;
+}
+
+nav {
     background: #092327;
-    /*width: 90%;*/
+    height: 60px;
+    width: 100%;
     max-width: 1000px;
     margin: auto;
 }
 
-.menu li a{
-    text-decoration: none;
-    color: white;
-    padding: 20px;
-    display: block;
+nav ul{
+    float: right;
 }
 
 .menu li {
     display: inline-block;
     text-align: center;
+}
 
+.menu li a{
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    display: block;
 }
 
 .menu li a:hover{
     background: #ef8354;
+    transition: .5s;
 }
+
+/*https://www.youtube.com/watch?v=f7QujqArvIw*/
