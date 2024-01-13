@@ -7,12 +7,12 @@
         require 'html/menu.html';
         ?>
     </head>
-
-<?php
-require 'connexio.php';
-?>
-
+    
 <body>
+    <div class="main">
+    <?php
+    require 'connexio.php';
+    ?>
     <h1>Add Cartoonist - Animation World!</h1>
     <fieldset>
         <legend>Dades Cartoonist</legend>
@@ -24,5 +24,6 @@ require 'connexio.php';
         <input type="text" id="name" name="name" value=""><br><br>
         <input type="submit" value="Enviar"><br>
     </fieldset>
+    </div>
 </body>
 </html>

@@ -1,6 +1,13 @@
 body{
     font-family: Arial, Helvetica, sans-serif;
     background: #e8e8e8;
+    /*max-width: 1000px;*/
+    margin: 10px;
+
+}
+
+.main {
+    width: 100%;
     max-width: 1000px;
     margin: auto;
 }

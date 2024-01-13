@@ -9,11 +9,11 @@
     </head>
     <body>
       
-    <div> 
+    <div class="main"> 
     <?php
         echo "<h1> Connexió BDD </h1> ";
         require 'connexio.php';
     ?>
-
+    </div>
 </body>
 </html>

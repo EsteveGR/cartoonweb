@@ -9,7 +9,7 @@
     </head>
     <body>
       
-    <div> 
+    <div class="main"> 
     <?php
         require 'connexio.php';
     ?>
