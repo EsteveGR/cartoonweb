@@ -13,7 +13,7 @@
     <?php
     require 'connexio.php';
     ?>
-    <h1>Add Cartoonist to Cartoon Network!</h1>
+    <h1>Add film to Cartoon Network!</h1>
     <fieldset>
         <legend>Dades Cartoonist</legend>
         <label form="fname"> Nom </label><br>
