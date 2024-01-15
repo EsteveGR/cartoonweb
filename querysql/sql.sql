@@ -54,7 +54,12 @@ VALUES ("Bola de drac", "1984", "Japo", "Aventures");
 
 USE cartoondb;
 INSERT INTO cartoon (name, cartoonistID, img, filmID)
-VALUES ("Goku", "1", "", "1");
+VALUES 
+("Goku", "1", "", "1"),
+("Son Goan", "1", "", "1"),
+("Vegeta", "1", "", "1"),
+("Satanas Cor Petit", "1", "", "1");
+
 
 USE cartoondb;
 SELECT *

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,20 +12,59 @@
     
 <body>
     <div class="main">
-    <?php
-    require 'connexio.php';
-    ?>
-    <h1>Add Cartoon to Cartoon Network!</h1>
-    <fieldset>
-        <legend>Dades Cartoonist</legend>
-        <label form="fname"> Nom </label><br>
-        <input type="text" id="name" name="name" value=""><br>
-        <label form="fname"> Familia </label><br>
-        <input type="text" id="name" name="name" value=""><br>
-        <label form="fname"> Pais </label><br>
-        <input type="text" id="name" name="name" value=""><br><br>
-        <input type="submit" value="Enviar"><br>
-    </fieldset>
+        <div> 
+        <?php
+        require 'connexio.php';
+        $res = $conn->query('SELECT * FROM cartoon');
+        $cartoon = $res->fetch_array();
+        ?>
+        <form action="insertpersonatge.php" method="POST">
+            <h1>Add Cartoon to Cartoon Network!</h1>
+            <fieldset>
+                <legend>Dades Personatges</legend>
+                <label form="fname"> Nom </label><br>
+                <input type="text" id="name" name="name" value=""><br>
+                <label form="fname"> Dibuixant </label><br>
+                <input type="text" id="name" name="name" value=""><br>
+                <label form="fname"> Imatge </label><br>
+                <input type="text" id="name" name="name" value=""><br>
+                <label form="fname"> Pelicula/Serie </label><br>
+                <input type="text" id="name" name="name" value=""><br><br>
+                
+                <input type="submit" value="Enviar"><br>
+            </fieldset>
+        </form>
+        </div>
+        <div>
+            <h2>Llistat de personatges</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nom</th>
+                        <th>Dibuixant</th>
+                        <th>Imatge</th>
+                        <th>Pelicula/Serie</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php while($cartoon != null){
+                        echo "<tr>";
+                        echo "<th>".$cartoon['id']."</th>";
+                        echo "<th>".$cartoon['name']."</th>";
+                        echo "<th>".$cartoon['id']."</th>";
+                        echo "<th>".$cartoon['id']."</th>";
+                        echo "<th>".$cartoon['id']."</th>";
+                        echo "<th><a href=''>Editar</a></th>";
+                        echo "<th><a href=''>Eliminar</a></th><br>";
+                        echo "</tr>";
+                        $cartoon = $res->fetch_array();
+                    }?>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 </html>
+
+https://www.youtube.com/watch?v=sYaEoNy5OGs
