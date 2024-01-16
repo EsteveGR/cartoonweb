@@ -10,20 +10,55 @@
     
 <body>
     <div class="main">
-    <?php
-    require 'connexio.php';
-    ?>
-    <h1>Add Cartoonist to Cartoon Network!</h1>
-    <fieldset>
-        <legend>Dades Cartoonist</legend>
-        <label form="fname"> Nom </label><br>
-        <input type="text" id="name" name="name" value=""><br>
-        <label form="fname"> Familia </label><br>
-        <input type="text" id="name" name="name" value=""><br>
-        <label form="fname"> Pais </label><br>
-        <input type="text" id="name" name="name" value=""><br><br>
-        <input type="submit" value="Enviar"><br>
-    </fieldset>
+    <div class="users-form"> 
+        <?php
+        require 'connexio.php';
+        $res = $conn->query('SELECT * FROM cartoonist');
+        $cartoonist = $res->fetch_array();
+        ?>
+        <form action="insertcartoonist.php" method="POST">
+        <h1>Add film to Cartoon Network!</h1>
+        <fieldset>
+            <legend>Dades dibuixants</legend>
+            <label form="fname"> Nom </label><br>
+            <input type="text" id="name" name="name" value=""><br>
+            <label form="fname"> Categoria </label><br>
+            <input type="text" id="name" name="name" value=""><br>
+            <label form="fname"> Pais </label><br>
+            <input type="text" id="name" name="name" value=""><br><br>
+            <input type="submit" value="Enviar"><br>
+        </fieldset>
+        </form>
+        </div>
+    
+        <div class="list-table">
+            <h2>Llistat de dibuixants</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nom</th>
+                        <th>Categoria</th>
+                        <th>Pais</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php while($cartoonist != null){
+                        echo "<tr>";
+                        echo "<th>".$cartoonist['id']."</th>";
+                        echo "<th>".$cartoonist['name']."</th>";
+                        echo "<th>".$cartoonist['familyname']."</th>";
+                        echo "<th>".$cartoonist['country']."</th>";
+                        echo "<th><a href='' class='list-table--edit'>Editar</a></th>";
+                        echo "<th><a href='' class='list-table--delete'>Eliminar</a></th>";
+                        echo "</tr>";
+                        $cartoonist = $res->fetch_array();
+                    }?>
+                </tbody>
+            </table>
+        </div>
     </div>
 </body>
 </html>
