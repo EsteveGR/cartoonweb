@@ -1,5 +1,3 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,7 +10,7 @@
     
 <body>
     <div class="main">
-        <div> 
+        <div class="users-form"> 
         <?php
         require 'connexio.php';
         $res = $conn->query('SELECT * FROM cartoon');
@@ -35,6 +33,7 @@
             </fieldset>
         </form>
         </div>
+    
         <div class="list-table">
             <h2>Llistat de personatges</h2>
             <table>

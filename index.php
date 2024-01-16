@@ -24,8 +24,9 @@
         $dibuixants = $res->fetch_array();
     }
     ?>
-
+    
     <h1> Llistat Personatges </h1>
+    
     <?php
     $res = $conn->query('SELECT * FROM cartoon');
     $cartoon = $res->fetch_array();
@@ -34,8 +35,9 @@
         $cartoon = $res->fetch_array();
     }
     ?>
-
+    
     <h1> Llistat Llistat Pelicules </h1>
+    
     <?php
     $res = $conn->query('SELECT * FROM film');
     $film = $res->fetch_array();

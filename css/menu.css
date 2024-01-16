@@ -1,13 +1,13 @@
 
 .logo{
-    height: 40px;
+    height: 35px;
     position: absolute;
-    padding: 10px 20px;
+    padding: 8px 20px;
 }
 
 nav {
     background: #092327;
-    height: 60px;
+    height: 50px;
     width: 100%;
     max-width: 1050px;
     margin: auto;
@@ -33,5 +33,3 @@ nav ul{
     background: #ef8354;
     transition: .5s;
 }
-
-/*https://www.youtube.com/watch?v=f7QujqArvIw*/
