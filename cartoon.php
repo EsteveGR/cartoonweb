@@ -35,7 +35,7 @@
             </fieldset>
         </form>
         </div>
-        <div>
+        <div class="list-table">
             <h2>Llistat de personatges</h2>
             <table>
                 <thead>
@@ -45,6 +45,8 @@
                         <th>Dibuixant</th>
                         <th>Imatge</th>
                         <th>Pelicula/Serie</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -55,8 +57,8 @@
                         echo "<th>".$cartoon['id']."</th>";
                         echo "<th>".$cartoon['id']."</th>";
                         echo "<th>".$cartoon['id']."</th>";
-                        echo "<th><a href=''>Editar</a></th>";
-                        echo "<th><a href=''>Eliminar</a></th><br>";
+                        echo "<th><a href='' class='list-table--edit'>Editar</a></th>";
+                        echo "<th><a href='' class='list-table--delete'>Eliminar</a></th>";
                         echo "</tr>";
                         $cartoon = $res->fetch_array();
                     }?>
