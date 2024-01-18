@@ -49,18 +49,21 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php while($cartoon != null){
+                    <?php 
+                        while($cartoon != null){
                         echo "<tr>";
                         echo "<th>".$cartoon['id']."</th>";
                         echo "<th>".$cartoon['name']."</th>";
                         echo "<th>".$cartoon['cartoonistID']."</th>";
                         echo "<th>".$cartoon['img']."</th>";
                         echo "<th>".$cartoon['filmID']."</th>";
-                        echo "<th><a href='update_cartoon.php?id='".$cartoon['id']."' class='list-table--edit'>Editar</a></th>";
+                        echo "<th><a href='update_cartoon.php?id=".$cartoon['id']."' class='list-table--edit'>Editar</a></th>";
                         echo "<th><a href='' class='list-table--delete'>Eliminar</a></th>";
                         echo "</tr>";
                         $cartoon = $res->fetch_array();
-                    }?>
+                        }
+                    ?>
+
                 </tbody>
             </table>
         </div>
