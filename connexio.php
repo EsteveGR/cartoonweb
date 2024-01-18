@@ -1,9 +1,9 @@
 <?php
 
-    $servername = "localhost";
-    $database = "cartoondb";
-    $username = "root";
-    $password = "r00t!!!!";
+    $servername = 'localhost';
+    $database = 'cartoondb';
+    $username = 'root';
+    $password = 'r00t!!!!';
 
 
     //create connection
