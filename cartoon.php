@@ -16,18 +16,18 @@
         $res = $conn->query('SELECT * FROM cartoon');
         $cartoon = $res->fetch_array();
         ?>
-        <form action="insertpersonatge.php" method="POST">
+        <form action="insert_cartoon.php" method="POST">
             <h1>Add Cartoon to Cartoon Network!</h1>
             <fieldset>
                 <legend>Dades Personatges</legend>
                 <label form="fname"> Nom </label><br>
-                <input type="text" id="name" name="name" value=""><br>
+                <input type="text" id="name" name="name"><br>
                 <label form="fname"> Dibuixant </label><br>
-                <input type="text" id="name" name="name" value=""><br>
+                <input type="text" id="cartoonistID" name="cartoonistID"><br>
                 <label form="fname"> Imatge </label><br>
-                <input type="text" id="name" name="name" value=""><br>
+                <input type="text" id="img" name="img"><br>
                 <label form="fname"> Pelicula/Serie </label><br>
-                <input type="text" id="name" name="name" value=""><br><br>
+                <input type="text" id="filmID" name="filmID"><br><br>
                 
                 <input type="submit" value="Enviar"><br>
             </fieldset>
