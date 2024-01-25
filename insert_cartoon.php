@@ -23,48 +23,48 @@ $uploadOk = 1;
 $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
 
 
-// Check if image file is a actual image or fake image
+//Validem imatge
 if(isset($_POST["enviar"])) {
   $check = getimagesize($_FILES["fileToUpload"]["tmp_name"]);
   if($check !== false) {
-    echo "File is an image - " . $check["mime"] . ".";
+    echo "El fitxer és una imarge - " . $check["mime"] . ".";
     $uploadOk = 1;
 
   } else {
-    echo "File is not an image.";
+    echo "El fitxer no és una imatge.";
     $uploadOk = 0;
   }
 }
 
-// Check file size
+//Validem la mida que no sigui més gran de 5meges
 if ($_FILES["fileToUpload"]["size"] > 500000) {
     echo "<br>";
-    echo "Sorry, your file is too large.";
+    echo "El fitxer és massa gran.";
     $uploadOk = 0;
   }
   
-  // Allow certain file formats
+  // Limitem els foramts
   if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
   && $imageFileType != "gif" ) {
     echo "<br>";
-    echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+    echo "Només s'accepten els següents formats: JPG, JPEG, PNG & GIF.";
     $uploadOk = 0;
   }
   
-  // Check if $uploadOk is set to 0 by an error
+  //Validem si l'uploadOk es 0 si és 0 no compleix els requisits anteriors.
   if ($uploadOk == 0) {
     echo "<br>";
-    echo "Sorry, your file was not uploaded.";
-  // if everything is ok, try to upload file
+    echo "El fixer no s'ha pujat. :(";
+  //Si tot ok, puja fitxer.
   } else {
     if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
       echo "<br>";
-      echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+      echo "La imatge ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " s'ha pujat correcctament. :)";
       $sql="INSERT INTO cartoon (name,cartoonistID,img,filmID) VALUES('$name','$cartoonistID','$target_file','$filmID')";
       $query = mysqli_query($conn, $sql);
     } else {
       echo "<br>";
-      echo "Sorry, there was an error uploading your file. :(";
+      echo "Hi ha hagut un error amb la pujada del fitxer. :(";
     }
   }
 
