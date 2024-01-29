@@ -1,7 +1,7 @@
 # Projecte M12 SMX2
 Aquesta web és el projecte que es fa M12 a Sistemes Microinformàtics i Xarxes. 
 
-Aquest projecte consisteix en fer una pàgina web amb un CRUD de gestió de personatges, dibuixants, i series o pelicues amb:
+Aquest projecte consisteix en fer una pàgina web amb un CRUD de gestió de personatges, dibuixants, i series o pelicules amb:
 
 - HTML
 - CSS

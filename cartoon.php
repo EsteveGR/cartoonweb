@@ -1,3 +1,10 @@
+<?php
+        require 'connexio.php';
+        $res = $conn->query('SELECT * FROM cartoon');
+        $cartoon = $res->fetch_array();
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,11 +18,6 @@
 <body>
     <div class="main">
         <div class="users-form"> 
-        <?php
-        require 'connexio.php';
-        $res = $conn->query('SELECT * FROM cartoon');
-        $cartoon = $res->fetch_array();
-        ?>
         <form action="insert_cartoon.php" method="POST" enctype="multipart/form-data" >
             <h1>Add Cartoon to Cartoon Network!</h1>
             <fieldset>

@@ -16,18 +16,18 @@
         $res = $conn->query('SELECT * FROM film');
         $film = $res->fetch_array();
         ?>
-        <form action="insertfilm.php" method="POST">
+        <form action="insert_film.php" method="POST">
         <h1>Add film to Cartoon Network!</h1>
         <fieldset>
             <legend>Dades Pelicules</legend>
             <label form="fname"> Nom </label><br>
             <input type="text" id="name" name="name" value=""><br>
             <label form="fname"> Any </label><br>
-            <input type="text" id="name" name="name" value=""><br>
+            <input type="text" id="year" name="year" value=""><br>
             <label form="fname"> Pais </label><br>
-            <input type="text" id="name" name="name" value=""><br>
+            <input type="text" id="country" name="country" value=""><br>
             <label form="fname"> Genere </label><br>
-            <input type="text" id="name" name="name" value=""><br><br>
+            <input type="text" id="genre" name="genre" value=""><br><br>
             <input type="submit" value="Enviar"><br>
         </fieldset>
         </form>
@@ -55,8 +55,8 @@
                         echo "<th>".$film['year']."</th>";
                         echo "<th>".$film['country']."</th>";
                         echo "<th>".$film['genre']."</th>";
-                        echo "<th><a href='' class='list-table--edit'>Editar</a></th>";
-                        echo "<th><a href='' class='list-table--delete'>Eliminar</a></th>";
+                        echo "<th><a href='update_film.php?id=".$film['id']."' class='list-table--edit'>Editar</a></th>";
+                        echo "<th><a href='delete_film.php?id=".$film['id']."' class='list-table--delete'>Eliminar</a></th>";
                         echo "</tr>";
                         $film = $res->fetch_array();
                     }?>
