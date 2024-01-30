@@ -23,7 +23,7 @@
             <fieldset>
                 <legend>Dades Personatges</legend>
                 <label form="fname"> Nom </label><br>
-                <input type="text" id="name" name="name"><br>
+                <input type="text" id="name" name="name" maxlength="30"><br>
                 <label form="fname"> Dibuixant </label><br>
                 <input type="text" id="cartoonistID" name="cartoonistID"><br>
                 <label form="fname"> Imatge </label><br>

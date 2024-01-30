@@ -21,11 +21,11 @@
         <fieldset>
             <legend>Dades dibuixants</legend>
             <label form="fname"> Nom </label><br>
-            <input type="text" id="name" name="name" value=""><br>
+            <input type="text" id="name" name="name" maxlength="30" value=""><br>
             <label form="fname"> Categoria </label><br>
-            <input type="text" id="name" name="name" value=""><br>
+            <input type="text" id="name" name="name" maxlength="30" value=""><br>
             <label form="fname"> Pais </label><br>
-            <input type="text" id="name" name="name" value=""><br><br>
+            <input type="text" id="name" name="name" maxlength="30" value=""><br><br>
             <input type="submit" value="Enviar"><br>
         </fieldset>
         </form>

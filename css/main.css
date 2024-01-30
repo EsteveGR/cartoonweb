@@ -75,6 +75,8 @@ table th{
 .users-form form input{
     font-family: 'Segoe UI', sans-serif;
     width: 100%;
+    font-size: medium;
+    padding-left: 10px;
 }
 
 .users-form form input{

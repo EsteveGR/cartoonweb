@@ -25,7 +25,21 @@ $film = $res->fetch_array();;
     </head>
 <body>
 <div class="main">
-<h1>Deleting film to Cartoon Network!</h1>
+<h1>Deleting film of Cartoon Network!</h1>
+    <?php
+    if ($personatges == null){
+                    echo "No hi ha personatges elimino la pelicula: ".$film['id']." - ".$film['name'];
+                    echo "<br>";
+                    //$sql="DELETE FROM film WHERE id='$id'";
+                    //$personatges = mysqli_query($conn, $sql);
+    }
+    else{
+        echo "Aquesta pelicula te ".$num_personatges." personatges, si l'elimines aquests personatges quedaran orfes!";
+        echo "<br>";
+        echo "Segur que la vols eliminar?";
+        echo "<br>";
+    }
+    ?>
     <div class="list-table">
     <h2>Llistat de personatges</h2>
         <table>
@@ -45,9 +59,8 @@ $film = $res->fetch_array();;
                 //Mirar si te personatges
                 if ($personatges != null)
                 {
-                    echo "hi ha ".$num_personatges." personatges no es pot borrar la pelicula si no es borren abans";
-                    echo "<br>";
-                    //fer llistat de personatges per borrar.
+
+                    //llistat de personatges per borrar.
                     while($personatges != null){
                         echo "<tr>";
                         echo "<th>".$personatges['id']."</th>";
@@ -60,11 +73,6 @@ $film = $res->fetch_array();;
                         echo "</tr>";
                         $personatges = $res1->fetch_array();
                         }
-                }
-                else{
-                    echo "no hi ha personatges ara borro la pelicula: ".$film['id'];
-                // $sql="DELETE FROM film WHERE id='$id'";
-                // $personatges = mysqli_query($conn, $sql);
                 }
                 ?>
             </tbody>

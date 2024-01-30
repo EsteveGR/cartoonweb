@@ -21,13 +21,13 @@
         <fieldset>
             <legend>Dades Pelicules</legend>
             <label form="fname"> Nom </label><br>
-            <input type="text" id="name" name="name" value=""><br>
+            <input type="text" id="name" name="name" maxlength="30" value=""><br>
             <label form="fname"> Any </label><br>
-            <input type="text" id="year" name="year" value=""><br>
+            <input type="text" id="year" name="year" maxlength="4" pattern="\d{4}" title="El format és per exemple --> 2024" value=""><br>
             <label form="fname"> Pais </label><br>
-            <input type="text" id="country" name="country" value=""><br>
+            <input type="text" id="country" name="country" maxlength="30" value=""><br>
             <label form="fname"> Genere </label><br>
-            <input type="text" id="genre" name="genre" value=""><br><br>
+            <input type="text" id="genre" name="genre" maxlength="30" value=""><br><br>
             <input type="submit" value="Enviar"><br>
         </fieldset>
         </form>

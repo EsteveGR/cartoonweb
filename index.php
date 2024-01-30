@@ -36,7 +36,7 @@
     }
     ?>
     
-    <h1> Llistat Llistat Pelicules </h1>
+    <h1> Llistat Pelicules </h1>
     
     <?php
     $res = $conn->query('SELECT * FROM film');

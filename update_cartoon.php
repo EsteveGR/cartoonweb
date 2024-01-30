@@ -25,7 +25,7 @@
                 <legend>Edició del personatge <?= $cartoon['name']?> </legend>         
                 <input type="hidden" name="id" value="<?= $cartoon['id']?>">
                 <label form="fname"> Nom </label><br>
-                <input type="text" name="name" placeholder="Nom" value="<?= $cartoon['name']?>">
+                <input type="text" name="name" placeholder="Nom" maxlength="30" value="<?= $cartoon['name']?>">
                 <label form="fname"> Dibuixant </label><br>
                 <input type="text" name="cartoonistID" placeholder="Dibuixant" value="<?= $cartoon['cartoonistID']?>">
                 <label form="fname"> Imatge </label><br>
