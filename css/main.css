@@ -118,3 +118,28 @@ table th{
 .users-form form fieldset{
     padding: 15px;
 }
+
+.centerb {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.confirm-delete form input[type=submit]{
+    border: none;
+    padding: 12px 50px;
+    text-decoration: none;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+    background-color: white; 
+    color: black; 
+    border: 2px solid hsl(9, 100%, 32%);
+    height: 40px;
+}
+
+.confirm-delete form input[type=submit]:hover {
+    background-color: hsl(9, 100%, 32%);
+    color: white;
+}
