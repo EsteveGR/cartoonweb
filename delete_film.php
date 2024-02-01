@@ -66,7 +66,7 @@ $film = $res->fetch_array();;
                         echo "Pelicula eliminada: ".$film['id']." - ".$film['name'];
                         echo "<br>";
                         $sql="DELETE FROM film WHERE id='$id'";
-                        $personatges = mysqli_query($conn, $sql);
+                        $query = mysqli_query($conn, $sql);
                         exit; //parem execució
                     } 
     }

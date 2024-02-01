@@ -49,26 +49,25 @@ $dibuixant = $res->fetch_array();;
                     echo "<br>";
                     echo "<br>";
                     echo "<div class='centerb'>";   
+                    // Validem si s'ha enviat la solicitut de borrat
+                    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+                        echo "<br>";
+                        echo "<h3>Dibuixant eliminat: ".$dibuixant['id']." - ".$dibuixant['name']."</h3>";
+                        echo "<br>";
+                        $sql="DELETE FROM cartoonist WHERE id='$id'";
+                        $query = mysqli_query($conn, $sql);
+                        exit; //parem execució
+                    } 
+                    else{
                     echo "<h3>Confirma que vols eliminar les dades!</h3>";
-                    //Borrar confirmació eliminació pel·lícula/serie
-                    
-                    echo "<form action='delete_film.php?id=".$dibuixant['id']."' method='post' onsubmit='return confirmemBorrat();'>";
+                    echo "<form action='delete_cartoonist.php?id=".$dibuixant['id']."' method='post' onsubmit='return confirmemBorrat();'>";
                     //S'envia la confirmació per post
                     echo "<br>";
                     echo "<input type='submit' value='Eliminar Dades'>";
                     echo "<br>";
                     echo "</div>";
                     echo "</form>";
-
-                    // Validem si s'ha enviat la solicitut de borrat
-                    if ($_SERVER["REQUEST_METHOD"] === "POST") {
-                        echo "<br>";
-                        echo "Dibuixant eliminada: ".$dibuixant['id']." - ".$dibuixant['name'];
-                        echo "<br>";
-                        //$sql="DELETE FROM film WHERE id='$id'";
-                        //$personatges = mysqli_query($conn, $sql);
-                        exit; //parem execució
-                    } 
+                    }
     }
     else{
         echo "Aquesta pelicula te ".$num_personatges." personatges, si l'elimines aquests personatges quedaran orfes!";
