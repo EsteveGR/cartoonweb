@@ -34,7 +34,7 @@
         </div>
     
         <div class="list-table">
-            <h2>Llistat de personatges</h2>
+            <h2>Llistat de pel·licules/series</h2>
             <table>
                 <thead>
                     <tr>
