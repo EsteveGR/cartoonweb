@@ -76,7 +76,8 @@ table th{
     font-family: 'Segoe UI', sans-serif;
     width: 100%;
     font-size: medium;
-    padding-left: 10px;
+    padding-left: 5px;
+    box-sizing: border-box;
 }
 
 .users-form form input{
@@ -88,6 +89,7 @@ table th{
     transition:.3s;
     margin-top: 5px;
     margin-bottom: 15px;
+    
 }
 
 .users-form form input:focus

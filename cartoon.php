@@ -22,13 +22,13 @@
             <h1>Add Cartoon to Cartoon Network!</h1>
             <fieldset>
                 <legend>Dades Personatges</legend>
-                <label form="fname"> Nom </label><br>
+                <label form="name"> Nom </label><br>
                 <input type="text" id="name" name="name" maxlength="30"><br>
-                <label form="fname"> Dibuixant </label><br>
+                <label form="caroonist"> Dibuixant </label><br>
                 <input type="text" id="cartoonistID" name="cartoonistID"><br>
-                <label form="fname"> Imatge </label><br>
+                <label form="image"> Imatge </label><br>
                 <input type="file" name="fileToUpload" id="fileToUpload"><br>
-                <label form="fname"> Pelicula/Serie </label><br>
+                <label form="film"> Pelicula/Serie </label><br>
                 <input type="text" id="filmID" name="filmID"><br><br>
                 
                 <input type="submit" name="enviar" value="Enviar"><br>
