@@ -25,11 +25,11 @@
                 <legend>Edició del personatge <?= $cartoonist['name']?> </legend>         
                 <input type="hidden" name="id" value="<?= $cartoonist['id']?>">
                 <label form="fname"> Nom </label><br>
-                <input type="text" name="name" placeholder="Nom" maxlength="30" value="<?= $cartoonist['name']?>">
+                <input type="text" name="name" placeholder="Nom" maxlength="30" value="<?= $cartoonist['name']?>" required>
                 <label form="fname"> Pais </label><br>
-                <input type="text" name="country" placeholder="Pais" maxlength="30" value="<?= $cartoonist['country']?>">
+                <input type="text" name="country" placeholder="Pais" maxlength="30" value="<?= $cartoonist['country']?>" required>
                 <label form="fname"> Categoria </label><br>
-                <input type="text" name="familyname" placeholder="Categoria" maxlength="30" value="<?= $cartoonist['familyname']?>">
+                <input type="text" name="familyname" placeholder="Categoria" maxlength="30" value="<?= $cartoonist['familyname']?>" required>
                 <input type="submit" value="Actualitzar Dades">
             </fieldset>
             </form>

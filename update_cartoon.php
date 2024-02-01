@@ -23,15 +23,15 @@
             <h1>Edit Cartoon of Cartoon Network!</h1>
             <fieldset>
                 <legend>Edició del personatge <?= $cartoon['name']?> </legend>         
-                <input type="hidden" name="id" value="<?= $cartoon['id']?>">
+                <input type="hidden" name="id" value="<?= $cartoon['id']?>" required>
                 <label form="fname"> Nom </label><br>
-                <input type="text" name="name" placeholder="Nom" maxlength="30" value="<?= $cartoon['name']?>">
+                <input type="text" name="name" placeholder="Nom" maxlength="30" value="<?= $cartoon['name']?>" required>
                 <label form="fname"> Dibuixant </label><br>
-                <input type="text" name="cartoonistID" placeholder="Dibuixant" value="<?= $cartoon['cartoonistID']?>">
+                <input type="text" name="cartoonistID" placeholder="Dibuixant" value="<?= $cartoon['cartoonistID']?>" required>
                 <label form="fname"> Imatge </label><br>
-                <input type="text" name="img" placeholder="Imatge" value="<?= $cartoon['img']?>">
+                <input type="text" name="img" placeholder="Imatge" value="<?= $cartoon['img']?>" required>
                 <label form="fname"> Pelicula/Serie </label><br>
-                <input type="text" name="filmID" placeholder="Pelicula" value="<?= $cartoon['filmID']?>">
+                <input type="text" name="filmID" placeholder="Pelicula" value="<?= $cartoon['filmID']?>" required>
                 <input type="submit" value="Actualitzar Dades">
             </fieldset>
             </form>

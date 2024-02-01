@@ -23,13 +23,13 @@
             <fieldset>
                 <legend>Dades Personatges</legend>
                 <label form="name"> Nom </label><br>
-                <input type="text" id="name" name="name" maxlength="30"><br>
+                <input type="text" id="name" name="name" maxlength="30" required><br>
                 <label form="caroonist"> Dibuixant </label><br>
-                <input type="text" id="cartoonistID" name="cartoonistID"><br>
+                <input type="text" id="cartoonistID" name="cartoonistID" required><br>
                 <label form="image"> Imatge </label><br>
-                <input type="file" name="fileToUpload" id="fileToUpload"><br>
+                <input type="file" name="fileToUpload" id="fileToUpload" required><br>
                 <label form="film"> Pelicula/Serie </label><br>
-                <input type="text" id="filmID" name="filmID"><br><br>
+                <input type="text" id="filmID" name="filmID" required><br><br>
                 
                 <input type="submit" name="enviar" value="Enviar"><br>
             </fieldset>

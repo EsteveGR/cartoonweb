@@ -25,13 +25,13 @@
                 <legend>Edició del personatge <?= $film['name']?> </legend>         
                 <input type="hidden" name="id" value="<?= $film['id']?>">
                 <label form="fname"> Nom </label><br>
-                <input type="text" name="name" placeholder="Nom" maxlength="30" value="<?= $film['name']?>">
+                <input type="text" name="name" placeholder="Nom" maxlength="30" value="<?= $film['name']?>" required>
                 <label form="fname"> Any </label><br>
-                <input type="text" name="year" placeholder="Any" maxlength="4" pattern="\d{4}" title="El format és per exemple --> 2024" value="<?= $film['year']?>">
+                <input type="text" name="year" placeholder="Any" maxlength="4" pattern="\d{4}" title="El format és per exemple --> 2024" value="<?= $film['year']?>" required>
                 <label form="fname"> Pais </label><br>
-                <input type="text" name="country" placeholder="Pais" maxlength="30" value="<?= $film['country']?>">
+                <input type="text" name="country" placeholder="Pais" maxlength="30" value="<?= $film['country']?>" required>
                 <label form="fname"> Genere </label><br>
-                <input type="text" name="genre" placeholder="Genere" maxlength="30" value="<?= $film['genre']?>">
+                <input type="text" name="genre" placeholder="Genere" maxlength="30" value="<?= $film['genre']?>" required>
                 <input type="submit" value="Actualitzar Dades">
             </fieldset>
             </form>
