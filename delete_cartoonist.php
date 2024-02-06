@@ -1,29 +1,26 @@
-
 <?php
+    require 'connexio.php';
 
-require 'connexio.php';
+    if ($_GET["id"])
+    {
+        $id=$_GET["id"];
+    }
+    else{
+        header("Location: cartoonist.php");
+        exit;
+    }
 
-if ($_GET["id"])
-{
-    $id=$_GET["id"];
-}
-else{
-    header("Location: cartoonist.php");
-    exit;
-}
+    //$id=$_GET["id"];
+    $personatges_dibuixant="SELECT * from cartoon WHERE cartoonistID='$id'";
+    $res1 = mysqli_query($conn, $personatges_dibuixant);
+    $num_personatges = $res1->num_rows;
+    $personatges = $res1->fetch_array();;
 
-//$id=$_GET["id"];
-$personatges_dibuixant="SELECT * from cartoon WHERE cartoonistID='$id'";
-$res1 = mysqli_query($conn, $personatges_dibuixant);
-$num_personatges = $res1->num_rows;
-$personatges = $res1->fetch_array();;
-
-$dades_dibuixant ="SELECT * from cartoonist WHERE id='$id'";
-$res= mysqli_query($conn, $dades_dibuixant);
-$dibuixant = $res->fetch_array();;
-
-
+    $dades_dibuixant ="SELECT * from cartoonist WHERE id='$id'";
+    $res= mysqli_query($conn, $dades_dibuixant);
+    $dibuixant = $res->fetch_array();;
 ?>
+
 <!DOCTYPE html>
 <html>
 <head>

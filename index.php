@@ -1,3 +1,7 @@
+<?php
+        require 'funcions/imatges.php';
+?>
+
 <!DOCTYPE html>
 <html>
     <head>
@@ -97,7 +101,7 @@
                         echo "<th>".$cartoon['id']."</th>";
                         echo "<th>".$cartoon['name']."</th>";
                         echo "<th>".$cartoon['cartoonistID']."</th>";
-                        echo "<th><img src='".$cartoon['img']."'></th>";
+                        canviMidaImatgeAlcada($cartoon['img']);
                         echo "<th>".$cartoon['filmID']."</th>";
                         echo "</tr>";
                         $cartoon = $res->fetch_array();

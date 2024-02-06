@@ -1,4 +1,5 @@
 <?php
+        require 'funcions/imatges.php';
         require 'connexio.php';
         $res = $conn->query('SELECT * FROM cartoon');
         $cartoon = $res->fetch_array();
@@ -57,7 +58,7 @@
                         echo "<th>".$cartoon['id']."</th>";
                         echo "<th>".$cartoon['name']."</th>";
                         echo "<th>".$cartoon['cartoonistID']."</th>";
-                        echo "<th><img src='".$cartoon['img']."'></th>";
+                        canviMidaImatgeAlcada($cartoon['img']);
                         echo "<th>".$cartoon['filmID']."</th>";
                         echo "<th><a href='update_cartoon.php?id=".$cartoon['id']."' class='list-table--edit'>Editar</a></th>";
                         echo "<th><a href='delete_cartoon.php?id=".$cartoon['id']."' class='list-table--delete'>Eliminar</a></th>";
