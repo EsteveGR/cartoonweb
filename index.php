@@ -6,6 +6,7 @@
 <html>
     <head>
         <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/modal.css">
         <title>Cartoon Web!</title>
         <?php
         require 'html/menu.html';
@@ -108,7 +109,15 @@
                         }
                     ?>
                 </tbody>
-            </table>
+            </table> 
+                <!-- Modal -->
+                <div id="myModal" class="modal">
+                    <span class="close">&times;</span>
+                    <div class="modal-content">
+                        <img id="img01">
+                    </div>
+                </div>
+                <script src="javascript/modal.js"></script>  
         </div>
     </div>
     </body>

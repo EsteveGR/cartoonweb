@@ -1,4 +1,6 @@
 <?php
+
+    require 'funcions/imatges.php';
     require 'connexio.php';
 
     if ($_GET["id"])
@@ -18,6 +20,7 @@
 
     $dades_dibuixant ="SELECT * from cartoonist WHERE id='$id'";
     $res= mysqli_query($conn, $dades_dibuixant);
+    $num_dibuixants = $res->num_rows;
     $dibuixant = $res->fetch_array();;
 ?>
 
@@ -25,6 +28,7 @@
 <html>
 <head>
         <link rel="stylesheet" type="text/css" href="css/main.css">
+        <link rel="stylesheet" type="text/css" href="css/modal.css">
         <title>Cartoon Web!</title>
         <script>
         function confirmemBorrat() {
@@ -40,37 +44,45 @@
 <h1>Deleting cartoonist of Cartoon Network!</h1>
     <div class='confirm-delete'>
     <?php
-    if ($personatges == null){
-                    echo "<br>";
-                    echo "No hi ha personatges del dibuixant: ".$dibuixant['id']." - ".$dibuixant['name'];
-                    echo "<br>";
-                    echo "<br>";
-                    echo "<div class='centerb'>";   
-                    // Validem si s'ha enviat la solicitut de borrat
-                    if ($_SERVER["REQUEST_METHOD"] === "POST") {
-                        echo "<br>";
-                        echo "<h3>Dibuixant eliminat: ".$dibuixant['id']." - ".$dibuixant['name']."</h3>";
-                        echo "<br>";
-                        $sql="DELETE FROM cartoonist WHERE id='$id'";
-                        $query = mysqli_query($conn, $sql);
-                        exit; //parem execució
-                    } 
-                    else{
-                    echo "<h3>Confirma que vols eliminar les dades!</h3>";
-                    echo "<form action='delete_cartoonist.php?id=".$dibuixant['id']."' method='post' onsubmit='return confirmemBorrat();'>";
-                    //S'envia la confirmació per post
-                    echo "<br>";
-                    echo "<input type='submit' value='Eliminar Dades'>";
-                    echo "<br>";
-                    echo "</div>";
-                    echo "</form>";
-                    }
+    if ($num_dibuixants == 0){
+        echo "El dibuixant amb ".$id." no existeix";
+        exit;
     }
-    else{
-        echo "Aquesta pelicula te ".$num_personatges." personatges, si l'elimines aquests personatges quedaran orfes!";
-        echo "<br>";
-        echo "Segur que la vols eliminar?";
-        echo "<br>";
+    else
+    {
+        if ($personatges == null)
+        {
+            echo "<br>";
+            echo "No hi ha personatges del dibuixant: ".$dibuixant['id']." - ".$dibuixant['name'];
+            echo "<br>";
+            echo "<br>";
+            echo "<div class='centerb'>";
+            // Validem si s'ha enviat la solicitut de borrat
+            if ($_SERVER["REQUEST_METHOD"] === "POST") {
+                echo "<br>";
+                echo "<h3>Dibuixant eliminat: ".$dibuixant['id']." - ".$dibuixant['name']."</h3>";
+                echo "<br>";
+                $sql="DELETE FROM cartoonist WHERE id='$id'";
+                $query = mysqli_query($conn, $sql);
+                exit; //parem execució
+            } 
+            else{
+                echo "<h3>Confirma que vols eliminar les dades!</h3>";
+                echo "<form action='delete_cartoonist.php?id=".$dibuixant['id']."' method='post' onsubmit='return confirmemBorrat();'>";
+                //S'envia la confirmació per post
+                echo "<br>";
+                echo "<input type='submit' value='Eliminar Dades'>";
+                echo "<br>";
+                echo "</div>";
+                echo "</form>";
+                }
+        }
+        else{
+            echo "Aquesta dibuixant te ".$num_personatges." personatges, si l'elimines aquests personatges quedaran orfes!";
+            echo "<br>";
+            echo "Segur que la vols eliminar?";
+            echo "<br>";
+        }
     }
     ?>
     <div class="list-table">
@@ -99,7 +111,7 @@
                         echo "<th>".$personatges['id']."</th>";
                         echo "<th>".$personatges['name']."</th>";
                         echo "<th>".$personatges['cartoonistID']."</th>";
-                        echo "<th><img src='".$personatges['img']."'></th>";
+                        canviMidaImatgeAlcada($personatges['img']);
                         echo "<th>".$personatges['filmID']."</th>";
                         echo "<th><a href='update_cartoon.php?id=".$personatges['id']."' class='list-table--edit'>Editar</a></th>";
                         echo "<th><a href='delete_cartoon.php?id=".$personatges['id']."' class='list-table--delete'>Eliminar</a></th>";
@@ -110,6 +122,14 @@
                 ?>
             </tbody>
         </table>
+        <!-- Modal -->
+        <div id="myModal" class="modal">
+            <span class="close">&times;</span>
+            <div class="modal-content">
+                <img id="img01">
+            </div>
+        </div>
+        <script src="javascript/modal.js"></script>  
         </div>
     </div>
 </div>

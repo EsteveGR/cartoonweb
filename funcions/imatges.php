@@ -15,7 +15,8 @@ function canviMidaImatgeAlcada($imatge){
         //echo "<br>";
         //echo $amplada_original;
         $nova_alcada = ($amplada_maxima / $amplada_original) * $alcada_original;
-        echo "<th><img src='".$imatge."' width='".$amplada_maxima."' height='".$nova_alcada."'></th>";
+        //echo "<th><img src='".$imatge."' width='".$amplada_maxima."' height='".$nova_alcada."'></th>";
+        echo "<th><img src='".$imatge."' class='modal-trigger' data-img='".$imatge."' style='height:100px;'></th>";
     }
     else{
         echo "<th><img src='".$imatge."'></th>";
