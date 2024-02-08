@@ -23,11 +23,13 @@
             
                     span.onclick = function() {
                         modal.style.display = "none";
+                        document.body.style.overflow = 'auto';
                     }
 
                     // quan es fa click a qualsevol lloc del modal es tanda.
                     modal.onclick = function(event) {
                         if (event.target === modal || event.target === modalContent) {
                             modal.style.display = "none";
+                            document.body.style.overflow = 'auto';
                              }
                     }
