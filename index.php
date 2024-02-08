@@ -117,6 +117,7 @@
                         <img id="img01">
                     </div>
                 </div>
+
                 <script src="javascript/modal.js"></script>  
         </div>
     </div>

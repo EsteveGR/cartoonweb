@@ -1,9 +1,9 @@
 
-                    // Obtener el modal y la imagen
+                    // obtenir el modal i la imatge
                     var modal = document.getElementById("myModal");
                     var modalImg = document.getElementById("img01");
 
-                    // Obtener todas las imágenes con la clase "modal-trigger" y asignarles un evento onclick
+                    // obtenir totes les imatges amb la clase "modal-trigger" i assignarles al event on click
                     var images = document.querySelectorAll(".modal-trigger");
                     images.forEach(function(image) {
                         image.onclick = function(){
@@ -13,11 +13,21 @@
                         }
                     });
 
-                    // Obtener el elemento <span> que cierra el modal
+                    //obtenir l'element <span> que tanca el modal
                     var span = document.getElementsByClassName("close")[0];
 
-                    // Cuando se hace clic en el <span> (x), se cierra el modal
+                    // Obtener el elemento modal-content
+                    var modalContent = document.querySelector(".modal-content");
+
+                    // quan es fa click al <span> (x), es tanca el modal
+            
                     span.onclick = function() {
                         modal.style.display = "none";
-                        document.body.style.overflow = 'auto';
+                    }
+
+                    // quan es fa click a qualsevol lloc del modal es tanda.
+                    modal.onclick = function(event) {
+                        if (event.target === modal || event.target === modalContent) {
+                            modal.style.display = "none";
+                             }
                     }
