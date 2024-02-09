@@ -44,8 +44,7 @@ if ($_FILES["fileToUpload"]["size"] > 500000) {
   }
   
   // Limitem els foramts
-  if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg"
-  && $imageFileType != "gif" ) {
+  if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" && $imageFileType != "webp") {
     echo "<br>";
     echo "Només s'accepten els següents formats: JPG, JPEG, PNG & GIF.";
     $uploadOk = 0;

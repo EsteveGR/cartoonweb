@@ -19,7 +19,7 @@
         <form action="insert_film.php" method="POST">
         <h1>Add film to Cartoon Network!</h1>
         <fieldset>
-            <legend>Dades Pelicules</legend>
+            <legend>Dades Pel·licules/Series</legend>
             <label form="fname"> Nom </label><br>
             <input type="text" id="name" name="name" maxlength="30" value="" required><br>
             <label form="fname"> Any </label><br>

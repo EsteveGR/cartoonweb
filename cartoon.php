@@ -1,10 +1,19 @@
 <?php
         require 'funcions/imatges.php';
+        require 'funcions/form.php';
         require 'connexio.php';
+        //llistat de personatges amb totes les seve dades
         $res = $conn->query('SELECT * FROM cartoon');
         $cartoon = $res->fetch_array();
-?>
 
+        //llistat de pelicules per desplegable
+        $res_films = $conn->query('SELECT id, name FROM film');
+
+        //llistat de dibuixants per desplegable
+        $res_cartoonists= $conn->query('SELECT id, name FROM cartoonist');
+
+        $conn->close(); 
+?>
 
 <!DOCTYPE html>
 <html>
@@ -26,13 +35,25 @@
                 <legend>Dades Personatges</legend>
                 <label form="name"> Nom </label><br>
                 <input type="text" id="name" name="name" maxlength="30" required><br>
+                
                 <label form="caroonist"> Dibuixant </label><br>
-                <input type="text" id="cartoonistID" name="cartoonistID" required><br>
+                <select name="cartoonistID" required>
+                <?php 
+                    creaSelectForm($res_cartoonists);
+                ?>
+                <!--<input type="text" id="cartoonistID" name="cartoonistID" required><br>-->
+                </select><br><br>
+
                 <label form="image"> Imatge </label><br>
                 <input type="file" name="fileToUpload" id="fileToUpload" required><br>
-                <label form="film"> Pelicula/Serie </label><br>
-                <input type="text" id="filmID" name="filmID" required><br><br>
-                
+
+                <label for="film"> Pelicula/Serie </label><br>
+                <select name="filmID" required>
+                <?php 
+                    creaSelectForm($res_films);
+                ?>
+                </select> <br><br>
+
                 <input type="submit" name="enviar" value="Enviar"><br>
             </fieldset>
         </form>

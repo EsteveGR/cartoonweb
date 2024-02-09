@@ -48,7 +48,7 @@
             </table>
         </div>
 
-    <h2> Llistat de Pel·licules </h2>
+    <h2> Llistat de Pel·licules/Series </h2>
     <?php
     $res = $conn->query('SELECT * FROM film');
     $film = $res->fetch_array();
