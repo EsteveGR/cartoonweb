@@ -41,10 +41,9 @@
                 <?php 
                     creaSelectForm($res_cartoonists);
                 ?>
-                <!--<input type="text" id="cartoonistID" name="cartoonistID" required><br>-->
-                </select><br><br>
+                </select><br>
 
-                <label form="image"> Imatge </label><br>
+                <label for="image"> Imatge </label><br>
                 <input type="file" name="fileToUpload" id="fileToUpload" required><br>
 
                 <label for="film"> Pelicula/Serie </label><br>
