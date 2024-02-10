@@ -94,6 +94,7 @@ table th{
     height: 30px;
     border: 0px;
     background-color: #e8e8e8;
+    padding: 2px;
 }
 
 .users-form form input[type=file]:focus
