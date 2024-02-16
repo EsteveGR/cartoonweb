@@ -21,7 +21,10 @@
 
     <h2> Llistat de Dibuixants </h2>
     <?php
-    $res = $conn->query('SELECT * FROM cartoonist');
+
+    $stmt = $conn->prepare('SELECT * FROM cartoonist');
+    $stmt->execute();
+    $res = $stmt->get_result();
     $cartoonist = $res->fetch_array();
     ?>
     <div class="list-table">
